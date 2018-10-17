@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="act">
+    <ion-title>
+        Act! Team Member
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button>
+        <ion-icon name="search" style="font-size:25px;"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- <ion-list inset>
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      {{ item }}
+    </button> 
+  </ion-list> -->
+
+  <ion-item text-center>
+    <img src="assets/imgs/logo_act.png" height='55'>
+  </ion-item>
+  
+  <ion-list>
+    <ion-item *ngFor="let person of items">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/thumb-01.jpg">
+      </ion-thumbnail>
+      <h2>{{person.full_name}}</h2>
+      <p>{{person.address}}</p>
+      <button ion-button clear item-end (click)="onDetailPage(person)" color="act">Detail</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer padding>
+  <button ion-button color="act" full round (click)="onButtonClick()">Add Data</button>
+</ion-footer>
